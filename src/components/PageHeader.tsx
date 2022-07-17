@@ -1,9 +1,13 @@
-function PageHeader() : JSX.Element {
-    return (
-        <div>
-            <h1>My Favourite Places</h1>
-        </div>
+interface PageHeaderProps {
+    title : string
+}
 
+function PageHeader(props : PageHeaderProps) : JSX.Element {
+    return (
+        <footer>
+            <h1>{props.title}</h1>
+
+        </footer>
     )
 }
 
