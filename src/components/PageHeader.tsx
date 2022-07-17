@@ -4,9 +4,9 @@ interface PageHeaderProps {
 
 function PageHeader(props : PageHeaderProps) : JSX.Element {
     return (
-        <footer>
+        <header>
             <h1>{props.title}</h1>
-        </footer>
+        </header>
     )
 }
 
