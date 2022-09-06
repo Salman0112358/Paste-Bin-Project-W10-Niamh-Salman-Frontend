@@ -3,13 +3,13 @@ import axios from "axios";
 
 // Interface IMPORTS
 import { IPaste } from "../../Interfaces/Interfaces";
+import { PasteListProps } from "../../Interfaces/Interfaces";
 
 // Utility Functions
 import makeAccordion from "../../utils/makeAccordion";
 
-const PasteList = (): JSX.Element => {
-  const [pasteArray, setPasteArray] = useState<IPaste[]>([]); // array state
-  const [summaryDisplay, setSummaryDisplay] = useState(true);
+const PasteList = ({pasteArray, setPasteArray, summaryDisplay, setSummaryDisplay} : PasteListProps ): JSX.Element => {
+
 
   async function getAllPaste() {
     const pasteResponse = await axios.get(

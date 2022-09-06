@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-
 import axios from "axios";
+
+import { NewPasteProps } from "../../Interfaces/Interfaces";
 
 //importing BOOTSTRAP COMPONENTS//
 import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 
-const NewPaste = (): JSX.Element => {
-  const [inputTitle, setTitle] = useState("");
-  const [inputBody, setBody] = useState("");
-  const [uploadTrigger, setUploadTrigger] = useState<boolean>(false);
+const NewPaste = ({inputTitle, setTitle, inputBody, setBody, uploadTrigger, setUploadTrigger} : NewPasteProps ): JSX.Element => {
+
+  // const [inputTitle, setTitle] = useState("");
+  // const [inputBody, setBody] = useState("");
+  // const [uploadTrigger, setUploadTrigger] = useState<boolean>(false);
 
   async function submitPaste() {
     if (inputBody.length > 0) {
