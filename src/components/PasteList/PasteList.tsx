@@ -12,11 +12,12 @@ const PasteList = (): JSX.Element => {
   const [pasteArray, setPasteArray] = useState<IPaste[]>([]); // array state
 
   async function getAllPaste() {
-    const pasteResponse: any = await axios.get( // this any can be removed??
+    const pasteResponse = await axios.get(
+      // this any can be removed??
       "https://bluewhale-pastebin.herokuapp.com/pastes"
     );
     const pasteData: IPaste[] = pasteResponse.data;
-   
+
     setPasteArray(pasteData);
   }
 
