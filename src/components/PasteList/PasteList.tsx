@@ -5,12 +5,9 @@ import axios from "axios";
 import { IPaste } from "../../Interfaces/Interfaces";
 
 // Utility Functions
-import makeAccordion from '../../utils/makeAccordion'
-
+import makeAccordion from "../../utils/makeAccordion";
 
 const PasteList = (): JSX.Element => {
-
-
   const [pasteArray, setPasteArray] = useState<IPaste[]>([]); // array state
   const [summaryDisplay, setSummaryDisplay] = useState(true);
 
@@ -28,13 +25,11 @@ const PasteList = (): JSX.Element => {
     getAllPaste();
   }, []);
 
-  
- 
-
-
   return (
     <>
-        {pasteArray.map((item, index) => (makeAccordion( item, index, summaryDisplay, setSummaryDisplay)))}
+      {pasteArray.map((item, index) =>
+        makeAccordion(item, index, summaryDisplay, setSummaryDisplay)
+      )}
     </>
   );
 };
