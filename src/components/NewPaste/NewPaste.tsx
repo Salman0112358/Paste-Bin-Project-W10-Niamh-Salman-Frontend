@@ -18,8 +18,8 @@ const NewPaste = (): JSX.Element => {
           <textarea className="form-control" id="form4Example3"></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary btn-block mb-4">
-          Send
+        <button type="submit" className="btn btn-success btn-block mb-4">
+          Submit Your New Paste!
         </button>
       </form>
     </>
