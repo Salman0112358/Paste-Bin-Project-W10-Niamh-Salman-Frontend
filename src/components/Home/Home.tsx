@@ -4,11 +4,25 @@ import React from "react";
 import NewPaste from "../NewPaste/NewPaste";
 import PasteList from "../PasteList/PasteList";
 
+//IMPORT BOOTSTRAP
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 const Home = (): JSX.Element => {
   return (
     <>
-      <NewPaste />
-      <PasteList />
+    <Container  >
+      <Row>
+        <Col xs={6}>
+          <NewPaste/>
+        </Col>
+        <Col xs={6}>
+          <PasteList />
+        </Col>
+      </Row>
+    </Container>
+      
     </>
   );
 };

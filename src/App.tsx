@@ -2,10 +2,12 @@
 
 import Home from "./components/Home/Home";
 
+import './App.scss'
+
 function App(): JSX.Element {
   return (
     <>
-      <Home />
+      <Home/>
     </>
   );
 }
