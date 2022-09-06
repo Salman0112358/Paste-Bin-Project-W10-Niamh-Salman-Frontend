@@ -16,6 +16,8 @@ const PasteList = (): JSX.Element => {
       "https://bluewhale-pastebin.herokuapp.com/pastes"
     );
     const pasteData: IPaste[] = pasteResponse.data;
+    const type = (typeof pasteData);
+    console.log(type);
 
     setPasteArray(pasteData);
   }
