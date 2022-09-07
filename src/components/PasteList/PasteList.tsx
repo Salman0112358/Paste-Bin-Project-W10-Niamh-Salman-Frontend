@@ -9,10 +9,7 @@ import makeAccordion from "../../utils/makeAccordion";
 import useStateManager from "../../useStateManager";
 
 const PasteList = (): JSX.Element => {
-  const {
-    pasteArray,
-    setPasteArray,
-  } = useStateManager();
+  const { pasteArray, setPasteArray } = useStateManager();
 
   async function getAllPaste() {
     const pasteResponse = await axios.get(
@@ -28,16 +25,7 @@ const PasteList = (): JSX.Element => {
     getAllPaste();
   }, []);
 
-  return (
-    <>
-      {pasteArray.map((item, index) =>
-        makeAccordion(
-          item,
-          index
-        )
-      )}
-    </>
-  );
+  return <>{pasteArray.map((item, index) => makeAccordion(item, index))}</>;
 };
 
 export default PasteList;

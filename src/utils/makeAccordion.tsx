@@ -5,32 +5,26 @@ import Card from "react-bootstrap/Card";
 
 const singleLineCharacterCount = 75;
 
-function makeAccordion(
-  item: IPaste,
-  index: number
-): JSX.Element {
-
+function makeAccordion(item: IPaste, index: number): JSX.Element {
   return (
-      <div key={item.paste_id}>
-       <Accordion>
-      <Accordion.Item eventKey={String(item.paste_id)}>
-        <Accordion.Header as="h1" >
-          <b>
-            {" "}
-            {index + 1} {item.title}
-          </b>{" "}
-        </Accordion.Header>
-          <Card >
+    <div key={item.paste_id}>
+      <Accordion>
+        <Accordion.Item eventKey={String(item.paste_id)}>
+          <Accordion.Header as="h1">
+            <b>
+              {" "}
+              {index + 1} {item.title}
+            </b>{" "}
+          </Accordion.Header>
+          <Card>
             <Card.Body>
               {item.body.slice(0, singleLineCharacterCount * 5)}
             </Card.Body>
           </Card>
-        <Accordion.Body>{item.body}</Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-
+          <Accordion.Body>{item.body}</Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
     </div>
-   
   );
 }
 

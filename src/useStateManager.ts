@@ -26,7 +26,7 @@ const useStateManager = (): InterfaceUseStateManager => {
     bodyCharacterCount,
     setBodyCharacterCount,
     showSummary,
-    setShowSummary
+    setShowSummary,
   };
 };
 

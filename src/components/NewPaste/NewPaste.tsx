@@ -3,7 +3,7 @@ import axios from "axios";
 //importing BOOTSTRAP COMPONENTS//
 import Spinner from "react-bootstrap/Spinner";
 
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 //importing custom react state hook//
 import useStateManager from "../../useStateManager";
@@ -19,9 +19,8 @@ const NewPaste = (): JSX.Element => {
     uploadTrigger,
     setUploadTrigger,
     bodyCharacterCount,
-    setBodyCharacterCount
+    setBodyCharacterCount,
   } = useStateManager();
-
 
   async function submitPaste() {
     if (inputBody.length > 0) {
@@ -63,27 +62,38 @@ const NewPaste = (): JSX.Element => {
             className="form-control"
             id="form4Example3"
             onChange={(e) => {
-              setBody(e.target.value)
-               setBodyCharacterCount(inputBody.length)}}
+              setBody(e.target.value);
+              setBodyCharacterCount(inputBody.length);
+            }}
             value={inputBody}
             rows={15}
             maxLength={5000}
           ></textarea>
         </div>
-        {
-          (bodyCharacterCount > maxCharacterLimit) ? (
+        {bodyCharacterCount > maxCharacterLimit ? (
           <>
-          <h5> Remove {bodyCharacterCount-maxCharacterLimit} Characters </h5>
-          <ProgressBar striped variant="danger" animated now={100} />
-          </>) : (
-            <>
-             <h5>You Have Entered ({bodyCharacterCount} / {maxCharacterLimit}) Characters </h5>
-              <ProgressBar striped variant="success" animated now={(bodyCharacterCount / maxCharacterLimit) * 100} />
-            </>)
-        }
+            <h5>
+              {" "}
+              Remove {bodyCharacterCount - maxCharacterLimit} Characters{" "}
+            </h5>
+            <ProgressBar striped variant="danger" animated now={100} />
+          </>
+        ) : (
+          <>
+            <h5>
+              You Have Entered ({bodyCharacterCount} / {maxCharacterLimit})
+              Characters{" "}
+            </h5>
+            <ProgressBar
+              striped
+              variant="success"
+              animated
+              now={(bodyCharacterCount / maxCharacterLimit) * 100}
+            />
+          </>
+        )}
 
-        <br/>
-
+        <br />
 
         <div style={{ display: "fex" }}>
           <button
