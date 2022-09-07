@@ -11,17 +11,14 @@ import useStateManager from "../../useStateManager";
 const PasteList = (): JSX.Element => {
   const { pasteArray, setPasteArray } = useStateManager();
 
-  
-
   useEffect(() => {
-
     async function getAllPaste() {
       const pasteResponse = await axios.get(
         // this any can be removed??
         "https://bluewhale-pastebin.herokuapp.com/pastes"
       );
       const pasteData: IPaste[] = pasteResponse.data;
-  
+
       setPasteArray(pasteData);
     }
 
