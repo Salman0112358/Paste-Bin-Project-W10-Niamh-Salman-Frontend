@@ -19,8 +19,6 @@ export interface NewPasteProps {
 export interface PasteListProps {
   pasteArray: IPaste[];
   setPasteArray: React.Dispatch<React.SetStateAction<IPaste[]>>;
-  summaryDisplay: boolean;
-  setSummaryDisplay: React.Dispatch<React.SetStateAction<boolean>>;
   showOnlyTitles: boolean;
 }
 
@@ -35,7 +33,8 @@ export interface InterfaceUseStateManager {
   setShowOnlyTitles: React.Dispatch<React.SetStateAction<boolean>>;
   pasteArray: IPaste[];
   setPasteArray: React.Dispatch<React.SetStateAction<IPaste[]>>;
-  summaryDisplay: boolean;
-  setSummaryDisplay: React.Dispatch<React.SetStateAction<boolean>>;
-
+  bodyCharacterCount : number;
+  setBodyCharacterCount : React.Dispatch<React.SetStateAction<number>>,
+  showSummary : boolean,
+  setShowSummary : React.Dispatch<React.SetStateAction<boolean>>
 }

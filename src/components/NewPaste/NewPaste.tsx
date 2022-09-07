@@ -2,12 +2,25 @@ import axios from "axios";
 
 //importing BOOTSTRAP COMPONENTS//
 import Spinner from "react-bootstrap/Spinner";
-import Form from "react-bootstrap/Form";
+
+import ProgressBar from 'react-bootstrap/ProgressBar'
+
+//importing custom react state hook//
 import useStateManager from "../../useStateManager";
 
-const NewPaste = (): JSX.Element => {
+const maxCharacterLimit = 900; // set on postgres Database
 
-  const {inputTitle,setTitle,inputBody,setBody,uploadTrigger,setUploadTrigger,showOnlyTitles,setShowOnlyTitles} = useStateManager() 
+const NewPaste = (): JSX.Element => {
+  const {
+    inputTitle,
+    setTitle,
+    inputBody,
+    setBody,
+    uploadTrigger,
+    setUploadTrigger,
+    bodyCharacterCount,
+    setBodyCharacterCount
+  } = useStateManager();
 
 
   async function submitPaste() {
@@ -49,11 +62,29 @@ const NewPaste = (): JSX.Element => {
           <textarea
             className="form-control"
             id="form4Example3"
-            onChange={(e) => setBody(e.target.value)}
+            onChange={(e) => {
+              setBody(e.target.value)
+               setBodyCharacterCount(inputBody.length)}}
             value={inputBody}
-            rows={10}
+            rows={15}
+            maxLength={5000}
           ></textarea>
         </div>
+        {
+          (bodyCharacterCount > maxCharacterLimit) ? (
+          <>
+          <h5> Remove {bodyCharacterCount-maxCharacterLimit} Characters </h5>
+          <ProgressBar striped variant="danger" animated now={100} />
+          </>) : (
+            <>
+             <h5>You Have Entered ({bodyCharacterCount} / {maxCharacterLimit}) Characters </h5>
+              <ProgressBar striped variant="success" animated now={(bodyCharacterCount / maxCharacterLimit) * 100} />
+            </>)
+        }
+
+        <br/>
+
+
         <div style={{ display: "fex" }}>
           <button
             type="submit"
@@ -70,15 +101,6 @@ const NewPaste = (): JSX.Element => {
           )}
         </div>
       </form>
-
-      <Form>
-        <Form.Check
-          type="switch"
-          id="custom-switch"
-          label="Show Only Paste Snippet Titles"
-          onClick={() => setShowOnlyTitles(!showOnlyTitles)}
-        />
-      </Form>
     </>
   );
 };

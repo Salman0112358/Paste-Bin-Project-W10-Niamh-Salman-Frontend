@@ -12,16 +12,15 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const Home = (): JSX.Element => {
-
   return (
     <>
       <Container>
         <Row>
           <Col xs={6}>
-            <NewPaste/>
+            <NewPaste />
           </Col>
           <Col xs={6}>
-            <PasteList/>
+            <PasteList />
           </Col>
         </Row>
       </Container>
