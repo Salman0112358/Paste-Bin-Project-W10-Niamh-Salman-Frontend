@@ -23,6 +23,7 @@ const PasteList = (): JSX.Element => {
     }
 
     getAllPaste();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <>{pasteArray.map((item, index) => makeAccordion(item, index))}</>;
