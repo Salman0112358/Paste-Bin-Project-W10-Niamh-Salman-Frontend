@@ -8,7 +8,8 @@ function makeAccordion(
   item: IPaste,
   index: number,
   summaryDisplay: boolean,
-  setSummaryDisplay: React.Dispatch<React.SetStateAction<boolean>>
+  setSummaryDisplay: React.Dispatch<React.SetStateAction<boolean>>,
+  showOnlyTitles: boolean
 ): JSX.Element {
   return (
     <Accordion
@@ -22,7 +23,7 @@ function makeAccordion(
             {index + 1} {item.title}
           </b>{" "}
         </Accordion.Header>
-        {summaryDisplay ? (
+        {showOnlyTitles && summaryDisplay ? (
           <Card style={{ display: "block" }}>
             <Card.Body>
               {item.body.slice(0, singleLineCharacterCount * 5)}
@@ -35,6 +36,7 @@ function makeAccordion(
             </Card.Body>
           </Card>
         )}
+
         <Accordion.Body>{item.body}</Accordion.Body>
       </Accordion.Item>
     </Accordion>

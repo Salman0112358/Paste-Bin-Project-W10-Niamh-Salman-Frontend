@@ -1,9 +1,6 @@
-import React, {useState} from "react";
-
-
+import React from "react";
 
 //IMPORT BOOTSTRAP
-import { IPaste } from "../../Interfaces/Interfaces";
 
 //IMPORT REACT COMPONEN|TS
 import NewPaste from "../NewPaste/NewPaste";
@@ -16,33 +13,15 @@ import Col from "react-bootstrap/Col";
 
 const Home = (): JSX.Element => {
 
-  const [inputTitle, setTitle] = useState("");
-  const [inputBody, setBody] = useState("");
-  const [uploadTrigger, setUploadTrigger] = useState<boolean>(false);
-  const [pasteArray, setPasteArray] = useState<IPaste[]>([]); // array state
-  const [summaryDisplay, setSummaryDisplay] = useState(true);
-
   return (
     <>
       <Container>
         <Row>
           <Col xs={6}>
-            <NewPaste
-              inputTitle={inputTitle}
-              setTitle={setTitle}
-              inputBody={inputBody}
-              setBody={setBody}
-              uploadTrigger={uploadTrigger}
-              setUploadTrigger={setUploadTrigger}
-             />
+            <NewPaste/>
           </Col>
           <Col xs={6}>
-            <PasteList
-              pasteArray={pasteArray}
-              setPasteArray={setPasteArray}
-              summaryDisplay={summaryDisplay}
-              setSummaryDisplay={setSummaryDisplay}
-            />
+            <PasteList/>
           </Col>
         </Row>
       </Container>

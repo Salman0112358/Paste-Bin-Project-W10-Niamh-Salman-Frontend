@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 // Interface IMPORTS
 import { IPaste } from "../../Interfaces/Interfaces";
-import { PasteListProps } from "../../Interfaces/Interfaces";
 
 // Utility Functions
 import makeAccordion from "../../utils/makeAccordion";
+import useStateManager from "../../useStateManager";
 
-const PasteList = ({pasteArray, setPasteArray, summaryDisplay, setSummaryDisplay} : PasteListProps ): JSX.Element => {
+const PasteList = (): JSX.Element => {
 
+    const {pasteArray,setPasteArray,summaryDisplay,setSummaryDisplay,showOnlyTitles} = useStateManager();
 
   async function getAllPaste() {
     const pasteResponse = await axios.get(
@@ -23,12 +24,18 @@ const PasteList = ({pasteArray, setPasteArray, summaryDisplay, setSummaryDisplay
 
   useEffect(() => {
     getAllPaste();
-  }, []);
+  });
 
   return (
     <>
       {pasteArray.map((item, index) =>
-        makeAccordion(item, index, summaryDisplay, setSummaryDisplay)
+        makeAccordion(
+          item,
+          index,
+          summaryDisplay,
+          setSummaryDisplay,
+          showOnlyTitles
+        )
       )}
     </>
   );
