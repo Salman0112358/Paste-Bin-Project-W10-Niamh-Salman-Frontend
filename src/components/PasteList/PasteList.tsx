@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
+import "./PasteList.css";
+
 // Interface IMPORTS
 import { IPaste } from "../../Interfaces/Interfaces";
 
@@ -23,8 +25,7 @@ const PasteList = (): JSX.Element => {
     }
 
     getAllPaste();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [setPasteArray]);
 
   return <>{pasteArray.map((item, index) => makeAccordion(item, index))}</>;
 };

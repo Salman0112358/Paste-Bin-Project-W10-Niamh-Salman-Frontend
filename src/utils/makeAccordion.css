@@ -1,0 +1,9 @@
+.text__Area {
+  white-space: pre-wrap;
+  break-inside: avoid;
+  text-align: justify;
+}
+
+.summary__Area {
+  white-space: pre-wrap;
+}

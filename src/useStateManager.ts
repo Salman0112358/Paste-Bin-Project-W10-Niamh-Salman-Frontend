@@ -31,3 +31,5 @@ const useStateManager = (): InterfaceUseStateManager => {
 };
 
 export default useStateManager;
+// useReducer
+// useContext

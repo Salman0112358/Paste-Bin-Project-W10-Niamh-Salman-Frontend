@@ -1,8 +1,13 @@
 import axios from "axios";
+import React from "react";
+
+import "./NewPaste.css";
+
+// Importing React Component
+import SuccessAlert from "../SuccessAlert/SuccessAlert";
+//import CodeEditor from "../CodeEditor";
 
 //importing BOOTSTRAP COMPONENTS//
-import Spinner from "react-bootstrap/Spinner";
-
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 //importing custom react state hook//
@@ -16,23 +21,16 @@ const NewPaste = (): JSX.Element => {
     setTitle,
     inputBody,
     setBody,
-    uploadTrigger,
-    setUploadTrigger,
     bodyCharacterCount,
     setBodyCharacterCount,
   } = useStateManager();
 
   async function submitPaste() {
     if (inputBody.length > 0) {
-      setUploadTrigger(true);
       await axios.post("https://bluewhale-pastebin.herokuapp.com/pastes", {
         title: inputTitle,
         body: inputBody,
       });
-
-      setTimeout(() => {
-        setUploadTrigger(false);
-      }, 2000);
     } else {
       window.alert("you must have a paste body before submit!");
     }
@@ -43,23 +41,24 @@ const NewPaste = (): JSX.Element => {
       <form>
         <div className="form-outline mb-4">
           <label className="form-label" htmlFor="form4Example1">
-            Title
+            <h4>Title</h4>
           </label>
           <input
             type="text"
             id="form4Example1"
-            className="form-control"
+            className="form-control text-white bg-dark"
             onChange={(e) => setTitle(e.target.value)}
             value={inputTitle}
+            placeholder="Enter Your Optional Title"
           />
         </div>
 
         <div className="form-outline mb-4">
           <label className="form-label" htmlFor="form4Example3">
-            Paste Body
+            <h4>Paste Body</h4>
           </label>
           <textarea
-            className="form-control"
+            className="form-control text-white bg-dark"
             id="form4Example3"
             onChange={(e) => {
               setBody(e.target.value);
@@ -68,7 +67,10 @@ const NewPaste = (): JSX.Element => {
             value={inputBody}
             rows={15}
             maxLength={5000}
+            placeholder="Place your paste items here or start writing"
           ></textarea>
+          {/* <CodeEditor/> */}
+          <SuccessAlert />
         </div>
         {bodyCharacterCount > maxCharacterLimit ? (
           <>
@@ -94,22 +96,14 @@ const NewPaste = (): JSX.Element => {
         )}
 
         <br />
-
-        <div style={{ display: "fex" }}>
-          <button
-            type="submit"
-            className="btn btn-success btn-block mb-4 me-5"
-            onClick={submitPaste}
-          >
-            Submit Your New Paste!
-          </button>
-
-          {uploadTrigger && (
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          )}
-        </div>
+        {}
+        <button
+          type="submit"
+          className="btn btn-success btn-block mb-4 me-5"
+          onClick={submitPaste}
+        >
+          Submit Your New Paste!
+        </button>
       </form>
     </>
   );
