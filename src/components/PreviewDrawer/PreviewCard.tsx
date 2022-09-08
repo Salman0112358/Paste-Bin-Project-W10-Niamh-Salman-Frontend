@@ -4,8 +4,14 @@ import type { DrawerProps } from "antd/es/drawer";
 import React, { useState } from "react";
 import "./PreviewCard.css";
 import { InterfacePreviewCard } from "../../Interfaces/Interfaces";
+import { deletePaste } from "../../utils/deletePaste";
+import { getAllPaste } from "../../utils/getAllPaste";
 
-const PreviewCard = ({ body }: InterfacePreviewCard): JSX.Element => {
+const PreviewCard = ({
+  body,
+  paste_id,
+  setPasteArray,
+}: InterfacePreviewCard): JSX.Element => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState<DrawerProps["size"]>();
 
@@ -38,7 +44,16 @@ const PreviewCard = ({ body }: InterfacePreviewCard): JSX.Element => {
           open={open}
           extra={
             <Space>
-              <Button variant="danger">Delete</Button>
+              <Button
+                onClick={() => {
+                  deletePaste(paste_id);
+                  onClose();
+                  getAllPaste(setPasteArray);
+                }}
+                variant="danger"
+              >
+                Delete
+              </Button>
               <Button variant="warning">Update</Button>
               <Button onClick={onClose} variant="dark">
                 Cancel

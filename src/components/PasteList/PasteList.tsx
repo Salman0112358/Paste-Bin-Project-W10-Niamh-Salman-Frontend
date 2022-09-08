@@ -27,7 +27,9 @@ const PasteList = (): JSX.Element => {
     getAllPaste();
   }, [setPasteArray]);
 
-  return <>{pasteArray.map((item, index) => MakeAccordion(item, index))}</>;
+  return (
+    <>{pasteArray.map((item, index) => MakeAccordion(item, setPasteArray))}</>
+  );
 };
 
 export default PasteList;

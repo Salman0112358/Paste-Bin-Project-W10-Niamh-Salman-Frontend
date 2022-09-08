@@ -43,5 +43,7 @@ export interface InterfaceUseStateManager {
 }
 
 export interface InterfacePreviewCard {
+  paste_id: number;
   body: string;
+  setPasteArray: React.Dispatch<React.SetStateAction<IPaste[]>>;
 }

@@ -16,10 +16,10 @@ const Home = (): JSX.Element => {
     <>
       <Container>
         <Row>
-          <Col xs={5}>
+          <Col xs={6}>
             <NewPaste />
           </Col>
-          <Col xs={7}>
+          <Col xs={6}>
             <PasteList />
           </Col>
         </Row>

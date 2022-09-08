@@ -9,7 +9,10 @@ import getFirstFiveLines from "../../utils/getFirstFiveLines";
 // Importing React Component///
 import PreviewCard from "../PreviewDrawer/PreviewCard";
 
-function MakeAccordion(item: IPaste, index: number): JSX.Element {
+function MakeAccordion(
+  item: IPaste,
+  setPasteArray: React.Dispatch<React.SetStateAction<IPaste[]>>
+): JSX.Element {
   return (
     <div key={item.paste_id}>
       <Accordion defaultActiveKey="0">
@@ -24,7 +27,11 @@ function MakeAccordion(item: IPaste, index: number): JSX.Element {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <PreviewCard body={item.body} />
+      <PreviewCard
+        body={item.body}
+        paste_id={item.paste_id}
+        setPasteArray={setPasteArray}
+      />
       <br />
     </div>
   );
