@@ -5,11 +5,12 @@ import Marquee from "react-fast-marquee";
 const SuccessAlert = (): JSX.Element => (
   <Alert
     className="good__post-alert"
-    type="success"
+    type="info"
     banner
     message={
       <Marquee pauseOnHover gradient={false}>
-        Welcome To Our Paste Bin! Scribble Something Down In The Box Above
+        {" "}
+        Welcome To Our Paste Bin! Scribble Something Down In The Box Above{" "}
       </Marquee>
     }
   />

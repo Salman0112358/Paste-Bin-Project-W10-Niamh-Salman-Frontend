@@ -8,5 +8,5 @@ test("should return the correct number of lines for the given string", () => {
      asdkjasjdasd
     askjdjasasda`
     )
-  ).toBe(4);
+  ).toBe(5);
 });

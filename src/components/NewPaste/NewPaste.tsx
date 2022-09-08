@@ -38,6 +38,7 @@ const NewPaste = (): JSX.Element => {
 
   return (
     <>
+      {/* <p>{console.log(inputBody)}</p> */}
       <form>
         <div className="form-outline mb-4">
           <label className="form-label" htmlFor="form4Example1">
