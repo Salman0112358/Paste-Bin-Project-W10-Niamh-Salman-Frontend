@@ -24,7 +24,7 @@ function MakeAccordion(item: IPaste, index: number): JSX.Element {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <PreviewCard item={item} />
+      <PreviewCard body={item.body} />
       <br />
     </div>
   );

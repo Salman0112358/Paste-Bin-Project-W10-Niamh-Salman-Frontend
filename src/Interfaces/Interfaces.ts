@@ -41,3 +41,7 @@ export interface InterfaceUseStateManager {
   showSummary: boolean;
   setShowSummary: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface InterfacePreviewCard {
+  body: string;
+}

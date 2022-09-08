@@ -3,8 +3,9 @@ import Button from "react-bootstrap/Button";
 import type { DrawerProps } from "antd/es/drawer";
 import React, { useState } from "react";
 import "./PreviewCard.css";
+import { InterfacePreviewCard } from "../../Interfaces/Interfaces";
 
-const PreviewCard = ({ item }: any): JSX.Element => {
+const PreviewCard = ({ body }: InterfacePreviewCard): JSX.Element => {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState<DrawerProps["size"]>();
 
@@ -46,7 +47,7 @@ const PreviewCard = ({ item }: any): JSX.Element => {
           }
         >
           <div className="paste__expanded-text">
-            <p>{item.body}</p>
+            <p>{body}</p>
           </div>
         </Drawer>
       </div>
