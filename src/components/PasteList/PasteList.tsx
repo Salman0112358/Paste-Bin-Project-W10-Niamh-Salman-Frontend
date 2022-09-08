@@ -7,7 +7,7 @@ import "./PasteList.css";
 import { IPaste } from "../../Interfaces/Interfaces";
 
 // Utility Functions
-import MakeAccordion from '../MakeAccordion/MakeAccordion';
+import MakeAccordion from "../MakeAccordion/MakeAccordion";
 import useStateManager from "../../useStateManager";
 
 const PasteList = (): JSX.Element => {

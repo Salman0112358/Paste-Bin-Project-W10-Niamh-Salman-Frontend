@@ -13,11 +13,18 @@ function MakeAccordion(item: IPaste, index: number): JSX.Element {
   return (
     <div key={item.paste_id}>
       <Accordion defaultActiveKey="0">
-      <Accordion.Item  eventKey="0">
-      <Accordion.Header as="h2"><b>{item.title} @ <small>({item.date})</small> <PreviewCard item={item}/></b></Accordion.Header>
-      <Accordion.Body className="text__Area summary_Area text-white bg-dark">{getFirstFiveLines(item.body)}</Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
+        <Accordion.Item eventKey="0">
+          <Accordion.Header as="h2">
+            <b>
+              {item.title} @ <small>({item.date})</small>{" "}
+            </b>
+          </Accordion.Header>
+          <Accordion.Body className="text__Area summary_Area text-white bg-dark">
+            {getFirstFiveLines(item.body)}
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+      <PreviewCard item={item} />
       <br />
     </div>
   );

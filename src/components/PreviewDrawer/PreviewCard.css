@@ -1,7 +1,6 @@
-.paste__expanded-text{
-    white-space: pre-wrap;
-    background-color: rgb(3, 4, 34);
-    color: white;
-    border-radius: 0.5rem;
+.paste__expanded-text {
+  white-space: pre-wrap;
+  background-color: rgb(3, 4, 34);
+  color: white;
+  border-radius: 0.5rem;
 }
-
