@@ -100,7 +100,7 @@ const NewPaste = (): JSX.Element => {
         {}
         <button
           type="submit"
-          className="btn btn-success btn-block mb-4 me-5"
+          className="btn btn-primary btn-block mb-4 me-5"
           onClick={submitPaste}
         >
           Submit Your New Paste!

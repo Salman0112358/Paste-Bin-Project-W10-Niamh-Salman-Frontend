@@ -4,6 +4,7 @@
   "private": true,
   "license": "CC-BY-NC-ND-4.0",
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.23.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",

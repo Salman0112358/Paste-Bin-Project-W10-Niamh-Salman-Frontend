@@ -7,7 +7,7 @@ import "./PasteList.css";
 import { IPaste } from "../../Interfaces/Interfaces";
 
 // Utility Functions
-import makeAccordion from "../../utils/makeAccordion";
+import MakeAccordion from '../MakeAccordion/MakeAccordion';
 import useStateManager from "../../useStateManager";
 
 const PasteList = (): JSX.Element => {
@@ -27,7 +27,7 @@ const PasteList = (): JSX.Element => {
     getAllPaste();
   }, [setPasteArray]);
 
-  return <>{pasteArray.map((item, index) => makeAccordion(item, index))}</>;
+  return <>{pasteArray.map((item, index) => MakeAccordion(item, index))}</>;
 };
 
 export default PasteList;
