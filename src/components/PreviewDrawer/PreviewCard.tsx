@@ -6,8 +6,10 @@ import "./PreviewCard.css";
 import { InterfacePreviewCard } from "../../Interfaces/Interfaces";
 import { deletePaste } from "../../utils/deletePaste";
 import { getAllPaste } from "../../utils/getAllPaste";
+import LaunchEdit from "../LaunchEdit/LaunchEdit";
 
 const PreviewCard = ({
+  title,
   body,
   paste_id,
   setPasteArray,
@@ -55,7 +57,7 @@ const PreviewCard = ({
               >
                 Delete
               </Button>
-              <Button variant="warning">Update</Button>
+              <LaunchEdit title={title} body={body} paste_id={paste_id} />
               <Button onClick={onClose} variant="dark">
                 Cancel
               </Button>

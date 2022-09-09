@@ -28,6 +28,7 @@ function MakeAccordion(
         </Accordion.Item>
       </Accordion>
       <PreviewCard
+        title={item.title}
         body={item.body}
         paste_id={item.paste_id}
         setPasteArray={setPasteArray}

@@ -4,7 +4,7 @@ export interface IPaste {
   paste_id: number;
   title: string;
   body: string;
-  date: string;
+  date?: string;
   children?: ReactNode;
 }
 
@@ -43,6 +43,7 @@ export interface InterfaceUseStateManager {
 }
 
 export interface InterfacePreviewCard {
+  title: string;
   paste_id: number;
   body: string;
   setPasteArray: React.Dispatch<React.SetStateAction<IPaste[]>>;
