@@ -36,9 +36,6 @@ const NewPaste = (): JSX.Element => {
     }
   }
 
-  const pastCharacterLimit =
-    inputBody.length < maxCharacterLimit ? false : true;
-
   return (
     <>
       {/* <p>{console.log(inputBody)}</p> */}
