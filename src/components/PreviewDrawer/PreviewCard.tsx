@@ -25,7 +25,6 @@ const PreviewCard = ({
   const onClose = () => {
     setOpen(false);
   };
-
   return (
     <>
       <div>
@@ -49,7 +48,6 @@ const PreviewCard = ({
               <Button
                 onClick={async () => {
                   await deletePaste(paste_id);
-                  console.log(`post has been deleted`);
                   onClose();
                   getAllPaste(setPasteArray);
                 }}

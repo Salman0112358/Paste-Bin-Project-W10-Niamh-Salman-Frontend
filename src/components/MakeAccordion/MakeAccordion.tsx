@@ -26,13 +26,13 @@ function MakeAccordion(
             {getFirstFiveLines(item.body)}
           </Accordion.Body>
         </Accordion.Item>
+        <PreviewCard
+          title={item.title}
+          body={item.body}
+          paste_id={item.paste_id}
+          setPasteArray={setPasteArray}
+        />
       </Accordion>
-      <PreviewCard
-        title={item.title}
-        body={item.body}
-        paste_id={item.paste_id}
-        setPasteArray={setPasteArray}
-      />
       <br />
     </div>
   );
