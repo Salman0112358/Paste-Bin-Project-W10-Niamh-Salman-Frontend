@@ -13,7 +13,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 //importing custom react state hook//
 import useStateManager from "../../useStateManager";
 
-const maxCharacterLimit = 900; // set on postgres Database
+const maxCharacterLimit = 2500; // set on postgres Database
 
 const NewPaste = (): JSX.Element => {
   const {
@@ -35,6 +35,9 @@ const NewPaste = (): JSX.Element => {
       window.alert("you must have a paste body before submit!");
     }
   }
+
+  const pastCharacterLimit =
+    inputBody.length < maxCharacterLimit ? false : true;
 
   return (
     <>
@@ -102,6 +105,7 @@ const NewPaste = (): JSX.Element => {
           type="submit"
           className="btn btn-primary btn-block mb-4 me-5"
           onClick={submitPaste}
+          disabled={inputBody.length < maxCharacterLimit ? false : true}
         >
           Submit Your New Paste!
         </button>
