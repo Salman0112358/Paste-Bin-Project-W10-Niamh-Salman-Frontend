@@ -45,8 +45,9 @@ const PreviewCard = ({
           extra={
             <Space>
               <Button
-                onClick={() => {
-                  deletePaste(paste_id);
+                onClick={async () => {
+                  await deletePaste(paste_id);
+                  console.log(`post has been deleted`);
                   onClose();
                   getAllPaste(setPasteArray);
                 }}
